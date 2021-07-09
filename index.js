@@ -1,10 +1,9 @@
 // TODO: Include packages needed for this application
+const inputREADME = require('../utility/utility');
 const inquirer = require('inquirer');
 const fs = require('fs');
-const util = require('util');
 // TODO: Create an array of questions for user input
-inquirer;
-prompt([
+inquirer.prompt([
     {
         type: 'input',
         name: 'username',
@@ -51,14 +50,11 @@ prompt([
         name: 'tests',
         message: 'How can the user test this project?',
     },
-])
 
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
+]).then((response) => {fs.writeFile("SampleReadMe.md",inputREADME(response) , function (err) {
+    if (err) {
+        console.log(err.message);
+    } else {
+        console.log('Your ReadMe has been saved!');
+    }
+});}).catch(err => console.log(err)); 
