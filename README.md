@@ -1,6 +1,6 @@
 # Professional-ReadME
 
-
+This is the Generate ReadMe Project, with included video of application. When ran, user is prompted by a series of questions that will populate a ReadMe file.
 
 
 
